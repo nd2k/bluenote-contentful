@@ -1,11 +1,11 @@
 <template>
-  <b-navbar toggleable="lg" fixed="top" type="dark" class="navbar">
+  <b-navbar toggleable="lg" type="dark" class="navbar">
     <b-navbar-brand href="#">
       <img
         src="../assets/img/logo.jpg"
         alt="Blue Note"
-        width="100"
-        height="100"
+        width="60"
+        height="60"
         class="d-inline-block align-top"
       >
     </b-navbar-brand>
@@ -41,10 +41,9 @@ export default {
 @import '@/assets/scss/custom.scss';
 
 .navbar {
-  background: $primary !important;
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
-  letter-spacing: 1px;
+  background: $secondary;
+  font-size: 1.5rem;
+  color: $quaternary;
+  padding: 0 1rem;
 }
 </style>
