@@ -1,8 +1,9 @@
 require('dotenv').config()
 const contentful = require('contentful')
 const client = contentful.createClient({
+  accessToken: process.env.CFT_ACCESS_TOKEN,
   space: process.env.CFT_SPACE_ID,
-  accessToken: process.env.CFT_ACCESS_TOKEN
+  environment: process.env.CFT_ENVIRONMENT
 })
 
 module.exports = client
