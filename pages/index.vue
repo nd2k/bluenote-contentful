@@ -7,25 +7,29 @@
     </b-row>
     <b-row class="align-items-center">
       <b-col cols="8">
-        <h7 class="text-center">
+        <div class="text-center title">
           Nos vins blancs:
-        </h7>
+        </div>
       </b-col>
       <b-col cols="2">
-        <h7 class="text-center">
+        <div class="text-center title">
           Verre:
-        </h7>
+        </div>
       </b-col>
-      <b-col cols="2" class="title">
-        <h7 class="text-center">
+      <b-col cols="2">
+        <div class="text-center title">
           Bouteille:
-        </h7>
+        </div>
       </b-col>
     </b-row>
     <b-row v-for="vin in vins" :key="vin.id">
       <b-col cols="8">
-        {{ vin.fields.vinNom }} <br></br>
-        {{ vin.fields.descriptionVin }}
+        <div class="mb-3">
+          {{ vin.fields.vinNom }}
+        </div>
+        <div class="text-justify" :class="{ isShowed }" @click="toggleClass(vin.id)">
+          {{ vin.fields.descriptionVin }}
+        </div>
       </b-col>
       <b-col cols="2" class="text-center">
         {{ vin.fields.prixVinVerre }} €
@@ -40,6 +44,11 @@
 <script>
 
 export default {
+  data () {
+    return {
+      isShowed: true
+    }
+  },
   computed: {
     vins () {
       return this.$store.state.vins.vins
@@ -47,6 +56,11 @@ export default {
   },
   async fetch ({ store }) {
     await store.dispatch('vins/getVins')
+  },
+  methods: {
+    toggleClass (item) {
+      this.isShowed = !this.isShowed(this.item)
+    }
   }
 }
 </script>
@@ -61,6 +75,15 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 0.2rem;
+}
+
+.title {
+  font-style: italic;
+}
+
+.isShowed {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

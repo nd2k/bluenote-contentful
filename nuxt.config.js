@@ -27,7 +27,7 @@ export default {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/contentful', '~/plugins/fontawesome'],
+  plugins: ['~/plugins/contentful', '~/plugins/fontawesome', '~/plugins/truncate'],
   /*
   ** Nuxt.js dev-modules
   */
@@ -64,6 +64,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
+   transpile: ['vue-clamp', 'resize-detector'],
     extend (config, ctx) {
       config.node = {
         fs: 'empty'

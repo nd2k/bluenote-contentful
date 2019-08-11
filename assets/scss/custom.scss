@@ -4,12 +4,13 @@ $secondary: #275683;
 $tertiary: #477ba2;
 $quaternary: #ffffff;
 
-* {
+body {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 1px;
-  font-size: 0.7rem !important;
+  font-size: calc(9px + (26 - 10) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 
 // Define your variable overrides here
