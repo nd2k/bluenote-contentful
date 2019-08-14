@@ -2,7 +2,7 @@
   <b-container fluid>
     <section id="vin" class="my-3">
       <b-row>
-        <h3 class="ml-3">
+        <h3 class="m-3">
           Notre carte de vins:
         </h3>
       </b-row>
@@ -25,7 +25,7 @@
       </b-row>
       <b-row v-for="(vin, index) in vins" :key="index">
         <b-col cols="8">
-          <div class="mb-3">
+          <div class="my-3">
             {{ vin.fields.vinNom }}
           </div>
           <div class="text-justify isHidden" :class="{ isShowed: index === activeVin }" @click="toggleClass(index)">
@@ -42,22 +42,33 @@
     </section>
     <section id="partenaire" class="my-3">
       <b-row>
-        <h3 class="ml-3">
+        <h3 class="m-3">
           Nos partenaires:
         </h3>
       </b-row>
-      <b-row v-for="(partenaire, index) in partenaires" :key="index">
-        <b-col cols="8">
-          <div class="mb-3">
-            {{ partenaire.fields.type }} : {{ partenaire.fields.nom }}
-          </div>
-          <div class="text-justify">
-            {{ partenaire.fields.description }}
-          </div>
-        </b-col>
-        <b-col cols="4">
-          <b-img :src="partenaire.fields.photo.fields.file.url" fluid />
-        </b-col>
+      <b-row>
+        <b-card-group deck class="mx-auto">
+          <b-card
+            v-for="(partenaire, index) in partenaires"
+            :key="index"
+            :title="partenaire.fields.nom"
+            :img-src="partenaire.fields.photo.fields.file.url + '?w=1200'"
+            img-top
+            class="card-img"
+          >
+            <b-card-text>
+              {{ partenaire.fields.nom }}
+            </b-card-text>
+            <b-card-sub-title>
+              {{ partenaire.fields.description }}
+            </b-card-sub-title>
+            <div slot="footer">
+              <b-button href="#" variant="info">
+                En savoir plus...
+              </b-button>
+            </div>
+          </b-card>
+        </b-card-group>
       </b-row>
     </section>
   </b-container>
@@ -117,5 +128,9 @@ export default {
 .isShowed {
   white-space: normal;
   overflow: visible;
+}
+
+.card-img {
+  width: 20rem;
 }
 </style>
