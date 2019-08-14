@@ -64,7 +64,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-   transpile: ['vue-clamp', 'resize-detector'],
+    transpile: ['vue-clamp', 'resize-detector'],
     extend (config, ctx) {
       config.node = {
         fs: 'empty'

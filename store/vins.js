@@ -17,7 +17,6 @@ export const actions = {
     })
     if (response.items.length > 0) {
       commit('setVins', response.items)
-      console.log(response.items)
     }
   }
 }
