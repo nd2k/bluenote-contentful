@@ -44,7 +44,9 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // dotenv
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // vue-scroll-to
+    ['vue-scrollto/nuxt', { duration: 500 }]
   ],
   /*
   ** Axios module configuration

@@ -14,10 +14,16 @@
 
     <b-collapse id="nav_collapse" is-nav>
       <b-navbar-nav class="mx-auto">
-        <b-nav-item href="#">
+        <b-nav-item
+          v-scroll-to="'#suggestion'"
+          href="#"
+        >
           Suggestions
         </b-nav-item>
-        <b-nav-item href="#">
+        <b-nav-item
+          v-scroll-to="'#partenaire'"
+          href="#"
+        >
           Partenaires
         </b-nav-item>
         <b-nav-item href="#">

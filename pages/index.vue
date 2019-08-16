@@ -8,7 +8,7 @@
       </b-row>
       <b-row class="align-items-center">
         <b-col cols="4">
-          <div class="text-center title my-3">
+          <div class="title my-3">
             Nos entrées:
           </div>
         </b-col>
@@ -18,7 +18,7 @@
           </div>
         </b-col>
         <b-col cols="4">
-          <div class="text-center title my-3">
+          <div class="title my-3">
             Nos vins:
           </div>
         </b-col>
@@ -47,6 +47,7 @@
         </b-col>
       </b-row>
     </section>
+    <hr>
     <section id="vin" class="my-3">
       <b-row>
         <h3 class="m-3">
@@ -55,7 +56,7 @@
       </b-row>
       <b-row class="align-items-center">
         <b-col cols="8">
-          <div class="text-center title">
+          <div class="title">
             Nos vins blancs:
           </div>
         </b-col>
@@ -87,6 +88,7 @@
         </b-col>
       </b-row>
     </section>
+    <hr>
     <section id="partenaire" class="my-3">
       <b-row>
         <h3 class="m-3">
@@ -118,6 +120,7 @@
         </b-card-group>
       </b-row>
     </section>
+    <hr>
   </b-container>
 </template>
 
