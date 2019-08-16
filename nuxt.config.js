@@ -58,6 +58,7 @@ export default {
   ** Build configuration
   */
   build: {
+    vendor: ['bootstrap', 'vue-scrollto'],
     /*
     ** You can extend webpack config here
     */
