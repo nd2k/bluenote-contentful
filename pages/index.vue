@@ -1,5 +1,52 @@
 <template>
   <b-container fluid>
+    <section id="suggestion" class="my-3">
+      <b-row>
+        <h3 class="m-3">
+          Nos suggestions:
+        </h3>
+      </b-row>
+      <b-row class="align-items-center">
+        <b-col cols="4">
+          <div class="text-center title my-3">
+            Nos entrées:
+          </div>
+        </b-col>
+        <b-col cols="2">
+          <div class="text-center title my-3">
+            Prix:
+          </div>
+        </b-col>
+        <b-col cols="4">
+          <div class="text-center title my-3">
+            Nos vins:
+          </div>
+        </b-col>
+        <b-col cols="2">
+          <div class="text-center title my-3">
+            Prix:
+          </div>
+        </b-col>
+      </b-row>
+      <b-row v-for="(entree, index) in entrees" :key="index">
+        <b-col cols="4">
+          <div class="text-justify isHidden" :class="{ isShowed: index === activeVin }" @click="toggleClass(index)">
+            {{ entree.fields.entree }}
+          </div>
+        </b-col>
+        <b-col cols="2" class="text-center">
+          {{ entree.fields.prixEntree }} €
+        </b-col>
+        <b-col cols="4">
+          <div class="text-justify isHidden" :class="{ isShowed: index === activeVin }" @click="toggleClass(index)">
+            {{ entree.fields.vin }}
+          </div>
+        </b-col>
+        <b-col cols="2" class="text-center">
+          {{ entree.fields.prixVin }} €
+        </b-col>
+      </b-row>
+    </section>
     <section id="vin" class="my-3">
       <b-row>
         <h3 class="m-3">
@@ -89,11 +136,15 @@ export default {
     },
     partenaires () {
       return this.$store.state.partenaires.partenaires
+    },
+    entrees () {
+      return this.$store.state.entrees.entrees
     }
   },
   async fetch ({ store }) {
     await store.dispatch('vins/getVins')
     await store.dispatch('partenaires/getPartenaires')
+    await store.dispatch('entrees/getEntrees')
   },
   methods: {
     toggleClass (index) {

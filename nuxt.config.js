@@ -27,7 +27,7 @@ export default {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/contentful', '~/plugins/fontawesome', '~/plugins/truncate'],
+  plugins: ['~/plugins/contentful', '~/plugins/fontawesome'],
   /*
   ** Nuxt.js dev-modules
   */
@@ -44,13 +44,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // dotenv
-    '@nuxtjs/dotenv',
-    // Markdownit
-    '@nuxtjs/markdownit'
+    '@nuxtjs/dotenv'
   ],
-  markdownit: {
-    injected: true
-  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

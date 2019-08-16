@@ -1,22 +1,22 @@
 import client from '~/plugins/contentful'
 
 export const state = () => ({
-  partenaires: []
+  entrees: []
 })
 
 export const mutations = {
-  setPartenaires (state, payload) {
-    state.partenaires = payload
+  setEntrees (state, payload) {
+    state.entrees = payload
   }
 }
 
 export const actions = {
-  async getPartenaires ({ commit }) {
+  async getEntrees ({ commit }) {
     const response = await client.getEntries({
-      content_type: 'partenaire'
+      content_type: 'suggestionsEntrees'
     })
     if (response.items.length > 0) {
-      commit('setPartenaires', response.items)
+      commit('setEntrees', response.items)
     }
   }
 }
