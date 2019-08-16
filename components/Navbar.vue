@@ -16,13 +16,13 @@
       <b-navbar-nav class="mx-auto">
         <b-nav-item
           v-scroll-to="'#suggestion'"
-          href="#"
+          href="#suggestion"
         >
           Suggestions
         </b-nav-item>
         <b-nav-item
           v-scroll-to="'#partenaire'"
-          href="#"
+          href="#partenaire"
         >
           Partenaires
         </b-nav-item>
